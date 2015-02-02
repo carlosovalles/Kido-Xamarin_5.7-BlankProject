@@ -1,4 +1,4 @@
-﻿/*
+/*
 
  Kidozen Blank Project - Xamarin
 
@@ -9,32 +9,22 @@ using Xamarin.Forms;
 
 namespace KidozenBlankProject
 {
-	public class BlankProjectMenuItems
+	public class XamarinMenu
 	{
-		public BlankProjectMenuItems(string approvalType, Color approvalColor)
-		{
-			this.Type = approvalType;
-			this.ApprovalColor = approvalColor;
-		}
-		public string Type { private set; get; }
-		public Color ApprovalColor { private set; get; }
+		public string Type { set; get; }
+		public string Color { set; get; }
+		public string DataSourceName { set; get; }
 	};
 
 	public class Contacts
 	{
-		public Contacts(string name, string email, string phoneNumber)
-		{
-			this.Name = name;
-			this.Email = email;
-			this.PhoneNumber = phoneNumber;
-		}
-		public string Name { private set; get; }
-		public string Email { private set; get; }
-		public string PhoneNumber { private set; get; }
-
-
+		public string Name { set; get; }
+		public string LastName { set; get; }
+		public string Email { set; get; }
+		public string Avatar { set; get; }
+		public string Location { set; get; }
+		public string Mobile { set; get; }
 	};
 
 
 }
-
