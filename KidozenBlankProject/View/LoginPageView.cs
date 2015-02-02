@@ -1,4 +1,4 @@
-﻿/*
+/*
 
  Kidozen Blank Project - Xamarin
 
@@ -42,6 +42,7 @@ namespace KidozenBlankProject
 			Entry userID = new Entry()
 			{
 				Placeholder = "Email",
+				Text = "public@kidozen.com",
 				TextColor = Color.Gray,
 				WidthRequest = 260,
 				HeightRequest = 50,
@@ -53,6 +54,7 @@ namespace KidozenBlankProject
 			Entry userPassword = new Entry()
 			{
 				Placeholder = "Password",
+				Text = "pass#1",
 				TextColor = Color.Gray,
 				IsPassword = true,
 				WidthRequest = 260,
