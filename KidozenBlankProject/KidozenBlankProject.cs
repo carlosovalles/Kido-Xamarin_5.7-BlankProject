@@ -1,4 +1,4 @@
-﻿/*
+/*
 
  Kidozen Blank Project - Xamarin
 
@@ -20,9 +20,9 @@ namespace KidozenBlankProject
 		{
 			return new MenuPageView();
 		}
-		public static Page GetDetailPage()
+		public static Page GetDetailPage(XamarinMenu item)
 		{
-			return new DetailPageView();
+			return new DetailPageView(item);
 		}
 	}
 }
