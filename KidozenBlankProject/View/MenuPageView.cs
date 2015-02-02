@@ -1,4 +1,4 @@
-﻿/*
+/*
 
  Kidozen Blank Project - Xamarin
 
@@ -20,20 +20,14 @@ namespace BlankKidozenProject
 		StackLayout boxedLayout;
 		StackLayout mainLayout;
 
-		//Mocked-up Data
-		List<BlankProjectMenuItems> menuItems = new List<BlankProjectMenuItems>
-		{
-			new BlankProjectMenuItems("CONTACS", Color.FromHex("FC8D2C")),
-			new BlankProjectMenuItems("DOCUMENTS",Color.FromHex("4E9A40")),
-			new BlankProjectMenuItems("?", Color.FromHex("154A7C")),
-			new BlankProjectMenuItems("?", Color.FromHex("718087")),
 
-		};
-
-
-
+		List<XamarinMenu> menuItems;
 		public MenuPageView()
 		{            
+
+			var ds = KidoManager.SharedInstance.Kido.DataSource("xamarinMenu");
+			menuItems = ds.Query<List<XamarinMenu>>().Result;
+
 			NavigationPage.SetHasNavigationBar(this, false);
 			boxedLayout = new StackLayout();
 			mainLayout = new StackLayout()
@@ -47,8 +41,6 @@ namespace BlankKidozenProject
 			UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.Default;
 			#endif
 
-			// To query for DataSources
-			// KidoManager.SharedInstance.GeItems();
 		}
 
 		//Drawing the Box View dinamically
@@ -56,8 +48,8 @@ namespace BlankKidozenProject
 		{
 			var companyLogo = new Image
 			{
-				WidthRequest = 120,
-				Source = FileImageSource.FromFile("iff_logo.png"),
+				WidthRequest = 50,
+				Source = FileImageSource.FromFile("logo.png"),
 			};
 
 			mainLayout.Children.Add(companyLogo);
@@ -69,7 +61,7 @@ namespace BlankKidozenProject
 			grid.RowDefinitions.Add(new RowDefinition());
 
 			int i = 0, r = 0;
-			foreach (BlankProjectMenuItems item in menuItems)
+			foreach (XamarinMenu item in menuItems)
 			{
 				grid.Children.Add(
 					new Button()
@@ -77,7 +69,7 @@ namespace BlankKidozenProject
 						Text = item.Type,
 						TextColor = Color.White,
 						Font = Font.SystemFontOfSize(NamedSize.Medium),
-						BackgroundColor = item.ApprovalColor,
+						BackgroundColor = Color.FromHex(item.Color),
 						BorderRadius = 0,
 						WidthRequest = 180,
 						HeightRequest = 180,
@@ -86,8 +78,7 @@ namespace BlankKidozenProject
 						HorizontalOptions = LayoutOptions.StartAndExpand,
 						Command = new Command(() =>
 							{
-								//Xamarin.Forms.Device.BeginInvokeOnMainThread(() => NavigationPage.PushAsync(App.GetDetailPage(), true));
-								Xamarin.Forms.Device.BeginInvokeOnMainThread(() => Navigation.PushModalAsync(App.GetDetailPage(),true));
+								Xamarin.Forms.Device.BeginInvokeOnMainThread(() => Navigation.PushModalAsync(App.GetDetailPage(item),false));
 							}),
 					},i, r);
 				i+=1;
