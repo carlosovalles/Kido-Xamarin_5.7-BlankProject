@@ -1,4 +1,3 @@
-﻿/*
 
  Kidozen Blank Project - Xamarin
 
@@ -26,7 +25,7 @@ namespace KidozenBlankProject
 	public class KidoManager
 	{
 		static KidoManager singleton;
-		static object locker = new object();
+		//static object locker = new object();
 
 		public static KidoManager SharedInstance
 		{
@@ -65,4 +64,3 @@ namespace KidozenBlankProject
 		}
 	}
 }
-
