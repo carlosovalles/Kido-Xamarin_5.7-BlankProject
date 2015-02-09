@@ -42,7 +42,7 @@ namespace KidozenBlankProject
 			Entry userID = new Entry()
 			{
 				Placeholder = "Email",
-				Text = Kido.Settings.UserName,
+				Text = KidoSettings.Username,
 				TextColor = Color.Gray,
 				WidthRequest = 260,
 				HeightRequest = 50,
@@ -54,7 +54,7 @@ namespace KidozenBlankProject
 			Entry userPassword = new Entry()
 			{
 				Placeholder = "Password",
-				Text = Kido.Settings.Password,
+				Text = KidoSettings.Password,
 				TextColor = Color.Gray,
 				IsPassword = true,
 				WidthRequest = 260,
