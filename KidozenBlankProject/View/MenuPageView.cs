@@ -20,13 +20,18 @@ namespace BlankKidozenProject
 		StackLayout boxedLayout;
 		StackLayout mainLayout;
 
-
-		List<XamarinMenu> menuItems;
+		List<XamarinMenu> menuItems = new List<XamarinMenu>() {
+			new XamarinMenu("CONTACTS", "FC8D2C", "datasource name"), 
+			new XamarinMenu("DOCUMENTS", "4E9A40", "datasource name"), 
+			new XamarinMenu("OTHER 1", "154A7C", "datasource name"), 
+			new XamarinMenu("OTHER 2", "718087", "datasource name")
+		};
+		
 		public MenuPageView()
 		{            
-
-			var ds = KidoManager.SharedInstance.Kido.DataSource("xamarinMenu");
-			menuItems = ds.Query<List<XamarinMenu>>().Result;
+			// ENABLE THIS TO READ A MENU DATA SOURCE FROM INSTANCE:
+			//var ds = KidoManager.SharedInstance.Kido.DataSource("xamarinMenu");
+			//menuItems = ds.Query<List<XamarinMenu>>().Result;
 
 			NavigationPage.SetHasNavigationBar(this, false);
 			boxedLayout = new StackLayout();
