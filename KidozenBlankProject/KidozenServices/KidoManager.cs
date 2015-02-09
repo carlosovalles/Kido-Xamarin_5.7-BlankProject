@@ -1,6 +1,5 @@
-
+/*
  Kidozen Blank Project - Xamarin
-
 */
 
 using System;
