@@ -11,6 +11,12 @@ namespace KidozenBlankProject
 {
 	public class XamarinMenu
 	{
+		public XamarinMenu(string type, string color, string datasource_name) 
+		{ 
+			this.Type = type; 
+			this.Color = color; 
+			this.DataSourceName = datasource_name; 
+		}
 		public string Type { set; get; }
 		public string Color { set; get; }
 		public string DataSourceName { set; get; }
